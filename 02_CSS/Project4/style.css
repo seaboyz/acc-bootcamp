@@ -2,7 +2,7 @@ body {
     background-color: #eaf0f2;
     font-family: "Oswald", sans-serif;
 }
-.logo {
+#logo {
     font-size: 42px;
     height: 35px;
     padding: 15px 35px;
