@@ -1,0 +1,25 @@
+.button-container {
+    margin: auto;
+    text-align: center;
+}
+.button {
+    color: white;
+    height: 100px;
+    width: 300px;
+    border-radius: 15px;
+    font-size: xx-large;
+    border: none;
+    margin: 5px;
+}
+.blue {
+    background-color: #0D47A1;
+}
+.red {
+    background-color: #F44336;
+}
+.green {
+    background-color: #4CAF50;
+}
+.yellow {
+    background-color: #FFEB3B;
+}
