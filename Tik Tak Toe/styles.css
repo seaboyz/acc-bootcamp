@@ -5,6 +5,8 @@ p {
 div div {
     /* When use the float property, you should also use the width property to indicate how wide the float the floated element should be */
     float: left;
+    /* Use "box-sizing" to include padding and border in the element's total width and height: */
+    box-sizing:border-box;
     width: 200px;
     height: 200px;
     /* Include padding and border in the element's total width and height: */
