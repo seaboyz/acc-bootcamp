@@ -1,22 +1,37 @@
-div div {
-    /* Include padding and border in the element's total width and height: */
-    box-sizing:border-box;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    float: left;
-    text-align: center;
-}
-
 p {
     text-align: center;
     font-size: 100px;
+}
+div div {
+    /* When use the float property, you should also use the width property to indicate how wide the float the floated element should be */
+    float: left;
+    width: 200px;
+    height: 200px;
+    /* Include padding and border in the element's total width and height: */
+    box-sizing:border-box;
+    /* ************* */
+    /* ************* */
+    /* position: relative; */
+    /* left: 100px; */
+    /* ************* */
+    /* position: absolute; */
+    /* top: 100px; */
+    /* left: 100px; */
+    /* ************* */
+    /* position: fixed; */
+    /* top: 100px; */
+    /* left: 100px; */
+
+    /* ************* */
+    text-align: center;
 }
 
 .container {
     width: 600px;
     height: 600px;
+    /* set container in center of horizantoal */
     margin: auto;
+    border: 1px solid black;
 }
 div div:nth-child(3n+2) {
     border-left: 10px solid black;
