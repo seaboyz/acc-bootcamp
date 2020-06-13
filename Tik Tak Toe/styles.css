@@ -1,0 +1,32 @@
+div div {
+    /* Include padding and border in the element's total width and height: */
+    box-sizing:border-box;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    float: left;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 100px;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+div div:nth-child(3n+2) {
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+}
+div div:nth-child(4),div div:nth-child(5),div div:nth-child(6) {
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+}
+
+
+
+
