@@ -1,0 +1,24 @@
+button {
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #5c6bc0;
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    letter-spacing: 2px;
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 30px 90px;
+    border-radius: 20px;
+    box-shadow: 0 6px #303f9f;
+}
+button:hover {
+    box-shadow: 0 3px #303f9f;
+    top: 2px;
+}
+button:active {
+    box-shadow: none;   
+    top: 6px;
+}
