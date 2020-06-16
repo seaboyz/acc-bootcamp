@@ -1,0 +1,43 @@
+/* **************************************** */
+/* full page background */
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.backgroundImg {
+    background-image: url(pic.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+/* ***************************************** */
+
+.intro {
+    /* center the element both vertically and horizantally */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.intro p {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.intro .btn {
+    /* center the button horizantally */
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* blur border */
+    box-shadow: 0 0 1px 1px #0275d8;
+}
+
