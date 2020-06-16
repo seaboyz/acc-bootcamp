@@ -1,6 +1,7 @@
 
 * {
     box-sizing: border-box;
+    color: white;
 }
 img {
     width: 100%; 
@@ -19,11 +20,4 @@ img {
 /*   absolute is actually relative to its parent container "container"   */
     position: absolute;
     padding: 10px;
-}
-h1 {
-    color: white;
-}
-p {
-    color: white;
-    z-index: 1;
 }
