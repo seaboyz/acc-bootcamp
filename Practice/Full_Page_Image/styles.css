@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
 }
+/* ***************************************** */
+/* to create a full image background */
 html, body {
     margin: 0;
     height: 100%;
@@ -11,8 +13,9 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-
 }
+/* ***************************************** */
+
 .form-container {
     position: fixed;
     background-color: white;
