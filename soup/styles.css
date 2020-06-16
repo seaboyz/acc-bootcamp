@@ -1,0 +1,28 @@
+
+* {
+    box-sizing: border-box;
+}
+img {
+    width: 100%; 
+}
+.container {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+.footer {
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0,0,0,0.25);
+    position: absolute;
+    padding: 10px;
+}
+h1 {
+    color: white;
+}
+p {
+    color: white;
+    z-index: 1;
+}
