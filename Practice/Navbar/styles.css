@@ -1,0 +1,29 @@
+body {
+    /* remove browser defaut margin */
+    margin: 0;
+    font-family: Roboto;;
+}
+
+.navbar {
+    background-color: #3b5998;
+    height: 90px;
+    overflow: hidden;
+}
+#logo {
+    float: left;
+    color: white;
+    text-align: center ;
+    padding: 22px 60px;
+    font-size: 30px;;
+}
+.navbar a {
+    float: right;
+    padding: 33px 60px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+}
+.navbar:hover {
+    background-color: #039be5;
+    color:yellow;
+}
