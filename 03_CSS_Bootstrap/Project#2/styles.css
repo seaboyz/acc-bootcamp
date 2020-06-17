@@ -23,3 +23,6 @@ html, body {
 .display-3 {
     font-weight: 600;
 }
+.logo {
+    height: 40px;
+}
