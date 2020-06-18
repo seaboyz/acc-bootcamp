@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+
+}
+.block {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+.blue .block {
+    background-color: blue;
+}
+.yellow {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    flex-wrap: wrap;
+    
+}
+.yellow .block {
+    background-color: yellow;
+}
+
+.purple{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.purple .block {
+    background-color: purple;
+}
+
+.pink {
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+.pink .block {
+    background-color: pink;
+}
