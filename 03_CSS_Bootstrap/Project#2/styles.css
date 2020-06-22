@@ -12,11 +12,7 @@ html, body {
     height: 100%;
 }
 /* ***************************************** */
-#logo {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 36px;
-    font-weight: 400;
-}
+
 .current {
     background-color: #d8d8d8;
 }
