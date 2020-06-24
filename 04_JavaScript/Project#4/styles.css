@@ -1,0 +1,32 @@
+/* testing */
+/* body {
+    background-color: red;
+} */
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url("background1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    width: 600px;
+    color: white;
+    font-size: 54px;
+    text-align: center;
+}
+
