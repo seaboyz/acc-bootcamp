@@ -1,0 +1,95 @@
+body {
+    background-color: #eaf0f2;
+    font-family: "Oswald", sans-serif;
+}
+#logo {
+    font-size: 42px;
+    height: 35px;
+    padding: 15px 35px;
+    color: white;
+}
+ul {
+    /* The list-style-type property specifies the type of list item marker. */
+    list-style-type: none;
+    background-color: #263238;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+ul li {
+    /* make list elements show hrorizantally */
+    float: left;
+}
+a {
+    /* the major difference is that display: inline-block allows to set a width and height on the element. */
+    display: inline-block;
+    /* display: inline; */
+    color: white;
+    text-decoration: none;
+    height: 45px;
+    padding: 15px 20px;
+    text-align: left;
+}
+ul li div {
+    display: none;
+    position: absolute;
+    background-color: #263238;
+    /* z-index: 1; */
+}
+ul div a {
+    /* make div elements show vertically */
+    display: block;
+}
+ul li a:hover {
+    background-color: #546e7a;
+}
+/* 
+    when do hover selection the selector have to have one of the following relationships.
+    1. descendant selector (space)
+    2. child selector (>)
+    3. adjacent sibling selector (+)
+    4. general sibling selector (~) 
+    */
+
+/* *************** 1 ***************** */
+li:hover div {
+    display: block;
+}
+
+p {
+    font-family: "Oswald", sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    background-color: #263238;
+    padding: 50px;
+}
+
+footer p {
+    color: #B0BEC5;
+    font-size: 28px;
+    padding-bottom: 30px;
+}
+footer div {
+    font-size: 20px;
+}
+.copyright {
+    color: #B0BEC5;
+    font-size: 16px;
+    padding: 30px 0 0;
+}
+footer a {
+    display: inline;
+}
+footer a:hover {
+    color: #CFD8DC;
+}
+img {
+    padding-bottom: 100px;
+}
