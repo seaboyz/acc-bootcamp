@@ -8,14 +8,14 @@ function rotatingBackground() {
     for (var i = 0; i < bgImages.length; i++) {
         bgImages[i].style.display = "none";
     }
-    // turn background image display from none to dispaly
-    bgImages[imageIndex].style.display = "block";
-
+    
     imageIndex++;
     // when imageIndex reaches bgImages number, reset it to 0
     if (imageIndex > bgImages.length) {
-        imageIndex = 0;
+        imageIndex = 1;
     }
+    // turn background image display from none to dispaly
+    bgImages[imageIndex-1].style.display = "block";
 }
 // run function without waiting 2000ms
 rotatingBackground();
