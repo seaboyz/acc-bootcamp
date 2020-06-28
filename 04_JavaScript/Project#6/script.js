@@ -11,8 +11,23 @@ timeElement = document.getElementsByClassName('time')[0];
 function changeBackgroundColorAndTime() {
     // get time now
     var today = new Date();
+    var hour = today.getHours()
+    var minute = today.getMinutes()
+    var second = today.getSeconds()
+    // add 0 in front of hour, minute and second when they are 1 digit
+    if (hour < 10) {
+      hour = '0' + hour;
+    } 
+    
+    if (minute < 10) {
+      minute = '0' + minute;
+    } 
+    if (second < 10) {
+      second = '0' + second;
+    } 
+    
 
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var time = hour + ":" + minute + ":" + second;
 
     timeElement.innerHTML = time;
     // change background color
