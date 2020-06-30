@@ -51,7 +51,7 @@ function addItem(e) {
     itemList.appendChild(li);
 
     // Delete the input content 
-    console.log(newItem);
+    document.getElementById('item').value='';
 }
 
 // Remove item
