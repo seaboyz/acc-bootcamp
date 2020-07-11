@@ -1,0 +1,52 @@
+.clock {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    /* centering the circle */
+    position: relative;
+    background-image: linear-gradient(rgb(44, 193, 178), rgba(3, 7, 34, 0.345)); 
+}
+
+.circle {
+    width: 75%;
+    height: 75%;
+    border: 20px solid white;
+    border-radius: 50%;
+    /* centering the circle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#hour {
+    position: absolute;
+    width: 10px;
+    height: 35%;
+    background-color: green;
+    left:50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+}
+#minute {
+    position: absolute;
+    width: 7px;
+    height: 45%;
+    background-color: black;
+    left:50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+}
+#second {
+    position: absolute;
+    width: 5px;
+    height: 45%;
+    background-color: red;
+    left:50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+}
