@@ -1,0 +1,76 @@
+/* **************************************** */
+/* particles background */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.header_background {
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    z-index: 0;
+    
+}
+
+
+/* ***************************************** */
+.header {
+    /* height 100% means 100% of the parent element  */
+    height: 100%;
+    width: 100%;     
+    background-color: black;
+    background-size: cover;
+}
+
+.header .container {
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+
+}
+
+.header_introduction {
+    /* center the element both vertically and horizantally */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 100%;
+
+
+}
+.header_introduction p {
+    color: white;
+    font-size: 50px;
+    line-height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.intro .btn {
+    /* center the button horizantally */
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* blur border */
+    box-shadow: 0 0 1px 1px #0275d8;
+}
+
+
+/* ***************************************** */
+
+.backgroundImg {
+    background-image: url(/image/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
