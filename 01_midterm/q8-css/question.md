@@ -18,7 +18,7 @@ What color would you expect the item "Sausage" to show as and why?
 
 ## Answer A:
     "red"
-    The combination select the element has .hightlight class in side a <li> element which is inside a <ul> element which has a class shopping-list.
+    The combination select the element has class .hightlight in side a <li> element which is inside a <ul> element which has a class shopping-list.
 
 ## Answer B:
     "blue"
