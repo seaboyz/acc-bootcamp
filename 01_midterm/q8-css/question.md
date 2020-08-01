@@ -16,5 +16,13 @@ What color would you expect the item "Sausage" to show as and why?
     <img src="images/b.png" width=90%>
 </div>
 
+## Answer A:
+    "red"
+    The combination select the element has .hightlight class in side a <li> element which is inside a <ul> element which has a class shopping-list.
+
+## Answer B:
+    "blue"
+    Id selector is more specific than tag selector.
+
 
 
