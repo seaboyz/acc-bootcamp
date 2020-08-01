@@ -10,3 +10,7 @@ Please describe what would be the output of the following code snippet on mobile
         <div class="col-xs-12 col-md-3">Egg Nog</div>
     </div>
 ```
+
+# Answer
+On mobile phone, each <div> element will take one row. we will see four rows.
+On desktop , all four <div> elements in one row, and each of them are equal-width columns.
