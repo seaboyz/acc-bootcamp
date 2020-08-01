@@ -16,4 +16,29 @@ Now wrap the functionality into a function that takes appropriate inputs as argu
 
 
 ### Your Answer: may be provided as a code file with single function within it.
-skip
+// write a funtion takes two integers  inputs , small and big, return all the integers between small and big, includeing small and big
+
+function printInt(small, large) {
+  for (let i = small; i <= large; i++) {
+    console.log(i)
+  }
+}
+
+// write a funtion take a integer as input, output "even" if the number is even number, otherwise output "odd"
+
+function isEven(n) {
+  if (n%2===0) {
+    console.log("even")
+  } else {
+    console.log("odd")
+  }
+}
+
+// combine the two functions to one
+function printInt(small, large) {
+  let obj = {}
+  for (let i = small; i <= large; i++) {
+    obj[i] = i%2===0 ? "even" : "odd"
+  }
+  return obj
+}
