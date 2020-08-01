@@ -8,3 +8,12 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.box {
+    width: 200px;
+    height: 100px;
+    color: white;
+    border: 2px solid grey;
+    background-color: rgba(60, 99, 155, 0.2);
+    border-radius: 20px;
+}
