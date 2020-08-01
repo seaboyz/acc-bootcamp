@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Metric Converter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="">
+        <style>
+            body {
+                background-color:  #282826;
+            }
+            .container {
+                color: white;
+                width: 50%;
+                font-family: 'Roboto', sans-serif;
+            }
+            h1 {
+                text-align: center;
+            }
+            form {
+                padding: 5% 10% 10%;
+                width: 100%;
+            }
+            label {
+                font-size: 16px;
+                text-align: left;
+            }
+            input {
+                width: 80%;
+                height: 25px;
+                border-radius: 5px;
+            }
+            p {
+                font-size: 12px;
+                margin: 0;
+                color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+            <h1>Metric Converter</h1>
+            <form action="">
+                <label >lbs</label><br>
+                <input id="lbsInput" type="number">
+                <p>Enter a value in either Input - lbs or Kg</p>
+                <label>Kg</label><br>
+                <input id="kgInput" type="number"><br><br>
+                <label>Miles</label><br>
+                <input id="milesInput" type="number"><br>
+                <p>Enter a value in either Input - miles or Kilometer</p>
+                <label>Km</label><br>
+                <input id="kmInpunt" type="number">
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
