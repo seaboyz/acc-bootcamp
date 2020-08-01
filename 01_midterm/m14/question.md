@@ -5,5 +5,5 @@
 3. `<input type="checkbox">`
 4. `<input type="check">`
 
-### Answer:
+### Answer:3
 

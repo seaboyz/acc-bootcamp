@@ -8,7 +8,7 @@
 4. jquery.min.js has additional functionality which results in its larger file size.
 5. None of the above.
 
-### Answer:
+### Answer: 5
 
 
 
@@ -21,4 +21,4 @@
 5. Exhaustive set of animations and effects.
 
 
-### Answer:
+### Answer:3
