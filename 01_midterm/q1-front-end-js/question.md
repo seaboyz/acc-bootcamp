@@ -7,4 +7,4 @@ This question tests your ability to write simple front end scripts.  You may spo
 Explanation or comments are not needed for this question.
 
 
-### Your Answer:
+### Your Answer: see modified script.js
