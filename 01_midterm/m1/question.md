@@ -6,5 +6,5 @@
 4. all div's with an id of "intro"
 5. selects nothing
 
-### Answer:
+### Answer:3
 

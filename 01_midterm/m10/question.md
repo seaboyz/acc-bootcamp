@@ -6,5 +6,5 @@
 4. `$(browser).ready()`
 5. None of the above.
 
-### Answer:
+### Answer:3
 

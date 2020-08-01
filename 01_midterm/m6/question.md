@@ -13,5 +13,6 @@ on github.com)
 
 Please explain your choice.
 
-### Answer:
+### Answer:5
+calc(2) returns the function(b), then excecute it by passing the atribute 2, returns function(c), after passing the atribute 4, returns the expression a + b * c, it's values is 14.
 
