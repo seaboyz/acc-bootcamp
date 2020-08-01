@@ -4,3 +4,8 @@
 
 
 ### Your Answer:
+1.  A.Using shorthand
+    B.Using internal CSS
+
+2. a.resize the image
+   b.choose Webp format
