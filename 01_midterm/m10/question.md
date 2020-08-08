@@ -8,3 +8,5 @@
 
 ### Answer:3
 
+Answer is document.ready  - #1 - 0pts
+

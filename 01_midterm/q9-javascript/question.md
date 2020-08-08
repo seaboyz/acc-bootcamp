@@ -13,3 +13,5 @@ Provide example code showing the use of each of the methods you list. (40% credi
 How do you remove a specified member from the array?  Provide small sample. (35% credit)
 # let arr = [1,2,3]
 # arr.splice(1,1)
+
+Good - 3pts

@@ -6,3 +6,6 @@
 4. between head and body elements
 
 ### Answer:1
+
+Correct - 2pts
+

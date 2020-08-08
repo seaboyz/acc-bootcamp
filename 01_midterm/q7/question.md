@@ -20,4 +20,6 @@ Method 2: myArray.length = 0
 
 Method 3: myArray=myArray.splice(0,0)
 
+3pts
+
 

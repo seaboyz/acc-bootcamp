@@ -7,3 +7,7 @@
 
 ### Answer: 4
 
+target= '_blank' will open the link in a new tab. Prevents current page from leaving current site.
+
+0pts
+

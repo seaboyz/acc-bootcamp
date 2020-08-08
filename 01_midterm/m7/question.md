@@ -6,3 +6,5 @@
 4. defines how position elements horizontally
 
 #### 1
+
+Correct - 2pts

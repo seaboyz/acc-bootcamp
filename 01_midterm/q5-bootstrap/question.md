@@ -14,3 +14,5 @@ Please describe what would be the output of the following code snippet on mobile
 # Answer
 On mobile phone, each <div> element will take one row. we will see four rows.
 On desktop , all four <div> elements in one row, and each of them are equal-width columns.
+
+Good - 3pts

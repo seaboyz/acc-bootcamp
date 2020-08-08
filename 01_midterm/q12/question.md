@@ -14,3 +14,9 @@ https://codepen.io/seaboyz/pen/wvMVxYQ
 3. The inheritance rule: Rules can be inheritanted from the rules that applied to its parent
 
 https://codepen.io/seaboyz/pen/zYrgLyB
+
+
+Good job - 3pts - but you only needed to do 10
+so not needed.
+
+

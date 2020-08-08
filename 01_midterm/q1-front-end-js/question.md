@@ -8,3 +8,5 @@ Explanation or comments are not needed for this question.
 
 
 ### Your Answer: see modified script.js
+
+Good - 3pts
