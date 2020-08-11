@@ -1,28 +1,27 @@
-const express = require('express')
-const zoo = require('./zoo')
+const express = require("express");
+const zoo = require("./zoo");
 
-const app = express()
+const app = express();
 
-app.get('/', (req, res) => {
-    res.send("I am the Root route")
-})
+app.get("/", (req, res) => {
+    res.send("I am the Root route");
+});
 
-app.get('/home', (req, res) => {
+app.get("/home", (req, res) => {
     // res.send("I am the home page")
     res.render("home.ejs", {
-        zoo: zoo
-    })
-})
+        zoo: zoo,
+    });
+});
 
-app.get('/about', (req, res) => {
+app.get("/about", (req, res) => {
     res.render("about.ejs", {
-        zoo:zoo
-    })
-})
+        zoo: zoo,
+    });
+});
 
-
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-    console.log("app listening at port 3000")
-})
+    console.log(`app listening at port ${PORT}`);
+});
