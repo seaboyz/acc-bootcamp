@@ -49,11 +49,11 @@ Create a web page with appropriate styling such that the view looks, visually as
 
 <img src="images/background.png" alt="" width="50%">
 
-Great job. I only graded Project 1 but took a look at project #2 - image would lnot link correctly
+Great job. I only graded Project 1 but took a look at project #2 - image would not link correctly
 
 Overall practical grade - 25/30
 
 1) Where are the comments? I did not see any comments about how and why you chose the code you did. This is important for communicating with teams etc....
-2) Requirements were to only show 2 decimals - you went 3 - this may not seem like  abig deal, but part of the practical is reading docs and paying attention to details
+2) Requirements were to only show 2 decimals - you went 3 - this may not seem like a big deal, but part of the practical is reading docs and paying attention to details
 
 Very glad to see your work!!!
