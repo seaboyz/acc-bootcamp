@@ -6,6 +6,8 @@ const fetch = require("node-fetch");
 
 const app = express();
 
+app.use(express.static(__dirname + "/public"));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
@@ -20,7 +22,7 @@ app.post("/", (req, res) => {
         .then((data) => {
             let unit = data.bpi[currency].symbol;
             let price = data.bpi[currency].rate_float.toFixed(2);
-            res.render("index.ejs", {
+            res.render("price.ejs", {
                 price: price,
                 unit: unit,
             });
