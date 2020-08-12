@@ -13,3 +13,6 @@
 
 ### Answer:1
 
+Actually all BUT #3 are correct - 
+
+Partial Credit - 1.33pts

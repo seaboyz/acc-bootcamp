@@ -47,5 +47,7 @@ What do the following CSS selectors select? Please provide examples
     Select all <p> elements follows the <div> element.
     <p>My best friend is Mickey.</p> and <p>I will not be styled.</p> are selected.
 
+Good - 3pts
+
 
 

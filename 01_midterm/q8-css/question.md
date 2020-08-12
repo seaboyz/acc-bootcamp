@@ -20,9 +20,14 @@ What color would you expect the item "Sausage" to show as and why?
     "red"
     The combination select the element has class .hightlight in side a <li> element which is inside a <ul> element which has a class shopping-list.
 
+Incorrect - the nth-of-type() is MORE specific than previous line so it will be blue
+
 ## Answer B:
     "blue"
     Id selector is more specific than tag selector.
+
+
+Good - partial credit - 1.5pts
 
 
 

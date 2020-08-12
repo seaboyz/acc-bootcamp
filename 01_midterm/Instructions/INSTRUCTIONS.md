@@ -96,3 +96,5 @@ Remember this review is a test of how well prepared you are. You need a honest a
 
 1. Do attempt the practical portion and push it, even if it doesn't work. Even non-working practical portion may attract enough credit to put you over the 70% mark.
 
+# Overall score -> 84.8% 
+## Great job!!!!!

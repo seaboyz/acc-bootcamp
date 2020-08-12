@@ -12,3 +12,5 @@ Please answer the following with maximum 50 words each (keep it short):
 
 2. a. It helps to share code with each other very easily.
    b. It can let others to modified your code without changing your source code by creating another version.
+
+Good - 3pts

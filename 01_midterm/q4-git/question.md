@@ -8,3 +8,5 @@
 
 2. So you don't have to commit all your files in the working directory. 
    You can just commit the files are staged.
+
+   Good - 3pts
