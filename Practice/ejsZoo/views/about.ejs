@@ -1,0 +1,8 @@
+<h1>I am the about page</h1>
+
+<% zoo.forEach(element => { %>
+    <% let {name, size, breed, country} = element %> 
+    <% let phone = element.owner.phone%> 
+    <p><%= name %> is a(n) <%= size %> <%= breed %> from <%= country %> <%= phone %> . </p>
+    
+<% }) %>
