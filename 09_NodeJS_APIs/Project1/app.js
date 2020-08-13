@@ -1,25 +1,26 @@
 const express = require("express");
 
-const bodyParser = require("body-parser");
-
 const fetch = require("node-fetch");
 
 const app = express();
 
-app.use(express.static(__dirname + "/public"));
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
-app.post("/", (req, res) => {
-    let currency = req.body.currency.toUpperCase();
+app.get("/getPrice", (req, res) => {
     // fetch from coindesk
     fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
-        .then((res) => res.json())
-        .then((data) => {
+        .then(response => {
+            if(!response){
+                throw Error("no response")
+            }
+            return response.json()
+        })
+        .then(data => {
+            let currency = req.query.currency.toUpperCase();
             let unit = data.bpi[currency].symbol;
             let price = data.bpi[currency].rate_float.toFixed(2);
             res.render("price.ejs", {
