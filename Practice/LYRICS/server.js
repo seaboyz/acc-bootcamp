@@ -15,17 +15,17 @@ app.get("/lyricResults", (req, res) => {
     let url = `https://api.lyrics.ovh/v1/${artist}/${title}`;
 
     fetch(url)
-    .then(response => {
-        if (!response) {
-            throw Error("no response");
-        }
-        return response.json();
-    })
-    .then((data)=>{
-        let lyrics = data.lyrics
-        res.render("lyricResults.ejs", {lyrics:lyrics})
-    })
-    .watch()
+        .then(response => {
+            if (!response) {
+                throw Error("no response");
+            }
+            return response.json();
+        })
+        .then(data => {
+            let lyrics = data.lyrics;
+            res.render("lyricResults.ejs", { lyrics: lyrics });
+        })
+        .watch();
 
     res.render("lyricResults.ejs");
 });

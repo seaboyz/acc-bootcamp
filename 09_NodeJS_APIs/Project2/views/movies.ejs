@@ -1,0 +1,21 @@
+<%# // movies page
+        // navbar
+        // title
+        // 3 cards %>
+<%- include('partials/header')  %>    
+<%- include("partials/navbar")  %> 
+<h1 style="color:black;margin-top:20px">Now Playing at a Threater Near You</h1>
+<% for( let index = 0; index < 3; index++ ) { %>
+        <% let original_title = results[index].original_title %> 
+        <% let overview = results[index].overview %> 
+        <% let vote_average = results[index].vote_average %> 
+        <% let poster_path = results[index].poster_path %> 
+        <%- include("partials/movie", {
+                original_title: original_title,
+                overview: overview,
+                vote_average:vote_average,
+                poster_path: poster_path,
+        })  %>         
+<% } %>
+
+<%- include('partials/footer')  %>
