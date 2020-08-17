@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bitcoin Price Checker</title>
+        <style>
+            body {
+                background-color: #80d4ff;
+                text-align: center;
+            }
+
+            #get-price {
+                display: block;
+                margin: 10px auto;
+                border: 10x solid white;
+                border-radius: 10%;
+                color: white;
+                background-color: darkblue;
+                font-size: 20px;
+                padding: 20px 30px;
+            }
+
+            h3 {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>BitCoin Price App</h1>
+            <input
+                type="radio"
+                id="usd"
+                name="currency"
+                value="usd"
+                checked="checked"
+            />
+            <label for="usd">USD</label>
+            <input type="radio" id="gbp" name="currency" value="gbp" />
+            <label for="">GBP</label>
+            <input type="radio" id="eur" name="currency" value="eur" />
+            <label for="">EUR</label>
+            <input id="get-price" type="submit" value="Get Price" />
+        <h2></h2>
+        <h3></h3>
+        <p><a href="https://www.coindesk.com/">Powered by CoinDesk</a></p>
+        <script>
+            let btn = document.getElementById("get-price");
+
+            btn.addEventListener("click", () => {
+                let currency = document.querySelector("input:checked").value.toUpperCase();
+                const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw Error(response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        let unit = data.bpi[currency].symbol;
+                        let price = data.bpi[currency].rate_float.toFixed(2);
+                        document.getElementsByTagName("h2")[0].innerHTML="This is the current price:"
+                        document.getElementsByTagName("h3")[0].innerHTML=`${unit} ${price}`
+                    });
+            });
+        </script>
+    </body>
+</html>
