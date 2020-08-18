@@ -3,9 +3,7 @@
 <h1>Here are some great places nearby:</h1>
 <p><a href="/">Search again?</a></p>
 <% for( let index = 0; index < 10; index++ ) { %>
-    <% let name =  data[index].name%> 
-    <% let url =  data[index].url%> 
-    <% let rating =  data[index].rating%> 
+    <% let {name, url, rating} = data[index] %> 
     <% let numberOfFullstars = Math.floor(rating) %> 
     <% let hasHalfStar = rating % 1 %> 
     <h3>
