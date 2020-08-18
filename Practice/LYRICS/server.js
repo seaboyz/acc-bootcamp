@@ -17,7 +17,7 @@ app.get("/lyricResults", (req, res) => {
     fetch(url)
         .then(response => {
             if (!response) {
-                throw Error("no response");
+                throw Error("response.statusText");
             }
             return response.json();
         })
@@ -25,7 +25,12 @@ app.get("/lyricResults", (req, res) => {
             let lyrics = data.lyrics;
             res.render("lyricResults.ejs", { lyrics: lyrics });
         })
-        .watch();
+        .catch(err => {
+            console.error(`Error from network:`, error);
+            res.json({ 
+                error: err.message 
+            });
+        });
 
     res.render("lyricResults.ejs");
 });
