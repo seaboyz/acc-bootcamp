@@ -14,12 +14,13 @@ $("input").keypress(function(event) {
   }
 });
 
-$("ul").on("click", "li", function() {
+$("ul").on("click",/* "li", */ function() {
   $(this).toggleClass("completed");
+  console.log($(this))
 });
 
 $("ul").on("click", "span", function(event) {
   $(this)
-    .parent()
+    //.parent()
     .remove();
 });

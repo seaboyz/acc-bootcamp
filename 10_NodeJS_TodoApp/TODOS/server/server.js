@@ -53,7 +53,6 @@ app.delete("/todos/:todoid", (req, res) => {
 
 app.put("/todos/:todoid", (req, res) => {
 	let idRequested = parseInt(req.params.todoid);
-	console.log(idRequested);
 	toDoArray.forEach((todo) => {
 		if (todo.id===idRequested) {
 			todo.isComplete = !todo.isComplete;
