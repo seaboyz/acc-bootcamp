@@ -16,64 +16,65 @@ let toDoArray = [
 	{
 		id: 1,
 		description: "Call mom",
-		isComplete: "false",
+		isComplete: false,
 	},
 	{
 		id: 2,
 		description: "Buy groceries",
-		isComplete: "false",
+		isComplete: false,
 	},
 	{
 		id: 3,
 		description: "Go to movies",
-		isComplete: "false",
+		isComplete: false,
 	},
 ];
+// new todo starter number
 let count = 4;
-
+// HOME ROUTE
 app.get("/", (req, res) => {
 	res.send("<h1>Home</h1>");
 });
+
 // READ
 app.get("/todos", (req, res) => {
 	res.json(toDoArray);
 });
+
 // CREATE
 app.post("/todos", (req, res) => {
 	let newTodo = {
 		id: count++,
 		description: req.body.description,
-		isComplete: "false",
+		isComplete: false,
 	};
 	toDoArray.push(newTodo);
 	res.status(201).json(newTodo);
 });
-// DELETE
 
-app.delete("/todos/:todoid", (req, res) => {
-	let id = parseInt(req.params.todoid);
-	toDoArray = toDoArray.filter((todo) => todo.id !== id);
-	res.status(201).json(toDoArray);
-});
-
+// PUT
 app.put("/todos/:todoid", (req, res) => {
-	let idRequested = parseInt(req.params.todoid);
-	toDoArray.forEach((todo) => {
-		if (todo.id === idRequested) {
-			todo.isComplete = !todo.isComplete;
-		}
+	let requestedToDoId = parseInt(req.params.todoid);
+	let requestedToDo = toDoArray.find((todo) => {
+		return (todo.id = requestedToDoId);
 	});
-
-	res.status(201).json(toDoArray);
+	// toggle the completion status
+	requestedToDo.isComplete = !requestedToDo.isComplete;
+	res.status(201).json(requestedToDo);
 });
 
-app.delete("/todos/:id", (req, res) => {
-	let id = req.params.id;
-	console.log(id);
-	let index = toDoArray.indexOf(newTodo);
-	toDoArray.splice(index, 1);
-	res.status(201).json(toDoArray);
+// DELETE
+app.delete("/todos/:todoid", (req, res) => {
+	let requestedToDoId = parseInt(req.params.todoid);
+	let requestedToDo = toDoArray.find((todo) => {
+		return (todo.id = requestedToDoId);
+	});
+	let indexOfRequestedToDo = toDoArray.indexOf(requestedToDo)
+	// delete the requestedTodo from todoArray
+	toDoArray.splice(indexOfRequestedToDo,1)
+	res.status(201).json(requestedToDo);
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
