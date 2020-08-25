@@ -8,10 +8,13 @@ $(document).ready(() => {
 		method: "GET",
 		url: todoUrl,
 	})
+		// get data from server
 		.done((toDoArray) => {
+			// remove all the fake todo items
 			$("li").remove();
 			toDoArray.forEach((todo) => {
 				$("ul").append(
+					// asign an id for each list item using the id from the server as data attribute
 					`<li data-id=${todo.id}>
 						${todo.description}
 						<span><i class='far fa-trash-alt'></i></span>
