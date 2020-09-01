@@ -1,4 +1,10 @@
-// NOTE: Original trial class code
+/* 
+When start a webpage, the request is always from the client to the server. 
+1. load the page.
+2. when finish loading the page, it starts to load script.js.
+3. start the CRUD
+4. acctually READ starts first
+*/
 
 const todoUrl = "http://localhost:3000/todos";
 
@@ -33,7 +39,8 @@ $("input").keypress(function (event) {
 // READ
 // when page finishs loading
 $(document).ready(() => {
-	// request data from server
+	// make a js call to the ajax engine
+	//  then ajax send a GET request to server
 	$.ajax({
 		method: "GET",
 		url: todoUrl,
@@ -63,7 +70,7 @@ $(document).ready(() => {
 // Update
 // when click a list item, trigger a callback funtion
 $("ul").on("click", "li", function () {
-	// get data attribute from the clicked item
+	// get data attribute from the clicked item list item
 	let id = $(this).data("id");
 	// send put request to server
 	$.ajax({
@@ -86,15 +93,19 @@ $("ul").on("click", "li", function () {
 // DELETE
 $("ul").on("click", "span", function (event) {
 	event.stopPropagation();
+	// The event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.
+	// https://www.w3schools.com/jquery/event_stoppropagation.asp
 	// get data attribute from the clicked item
 	let id = $(this).parent().data("id");
-	// send delete request to server
+	// send delete request to server with id in the url
 	$.ajax({
 		method: "DELETE",
 		url: `${todoUrl}/${id}`,
 	})
+		// receive data from server
 		.done((requestedToDo) => {
 			let id = requestedToDo._id;
+			// delete the list item with the id as data attribute
 			$(`li[data-id="${id}"]`).remove();
 		})
 		.fail((error) => {

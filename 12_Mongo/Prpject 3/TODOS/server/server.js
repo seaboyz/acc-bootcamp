@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const logger = require("morgan");
 const cors = require("cors");
 
@@ -13,41 +12,66 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-// Connection
+// geting started with mongoose
+const mongoose = require("mongoose");
+
+// database url
+// "todo_list" is the name of the database
 const db = "todo_list";
 const url = `mongodb://localhost:27017/${db}`;
 
+// connection
+// when conntect url succeffuly, mongodb create a database call "todo_list"
 mongoose
+	// connect to url
 	.connect(url, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useFindAndModify: false,
 	})
+
+	// if connection to database is successfull
 	.then(() => console.log(`Connected to ${db} database`))
+
+	// if connection to database is wrong
 	.catch(() => console.log(`Error connecting to ${db} database `, error));
 
-// BluePrints
-let todoSchema = new mongoose.Schema({
+// defining schema
+let Schema = mongoose.Schema;
+
+let todoSchema = new Schema({
 	description: {
-		type: String,
+		type: String, // "String" is the shorthand of "type: String"
+		// validation set description field must have a string value
 		required: [true, "Must have a description"],
 	},
 	isComplete: {
 		type: Boolean,
+		// setup the default value for isComplete field
 		default: false,
 	},
+	createdAt: {
+		type: Date,
+		default: Date.now,
+	},
 });
+// create model
+// when create a mongoose model, mongo creates a collection called todos
+// let TodoModel = mongoose.model("todos", todoSchema);
+// a altertive way create a model, the mongoose will convert "Todo" to "todos" as collection name
 
-let TodoModel = mongoose.model("todos", todoSchema);
+let TodoModel = mongoose.model("Todo", todoSchema);
 
 // HOME ROUTE
 app.get("/", (req, res) => {
 	res.send("<h1>Home</h1>");
 });
 
+// CRUD
 // CREATE
 // recieve data from cliet using post request
 app.post("/todos", (req, res) => {
+	// create a document using the input as the the description field value
 	let newTodo = new TodoModel({
 		description: req.body.description,
 	});
@@ -65,7 +89,7 @@ app.post("/todos", (req, res) => {
 });
 
 // READ
-// when there is get request from client
+// when there is get request from client's ajax
 app.get("/todos", (req, res) => {
 	// request data from database
 	TodoModel.find({}, (error, results) => {
@@ -74,7 +98,7 @@ app.get("/todos", (req, res) => {
 			console.log("Error finding documents from database: ", error);
 			// receive data from database
 		} else {
-			// send data to client
+			// send data to client ajax
 			res.json(results);
 		}
 	});
@@ -84,23 +108,25 @@ app.get("/todos", (req, res) => {
 // recieve put request from client
 app.put("/todos/:todoid", (req, res) => {
 	// recieve id from url
-	let requestedToDoId = req.params.todoid;
-	TodoModel.findById(requestedToDoId, (error, result) => {
+	let id = req.params.todoid;
+	// use id to find the document
+	TodoModel.findById(id, (error, result) => {
 		if (error) {
 			console.log("Error finding documents from database: ", error);
 			// receive data from database
 		} else {
-			// toggole isComplete field
+			// toggole isComplete field's boolean value
 			result.isComplete = !result.isComplete;
 			// save result to server
-			result.save((error, result) => {
+			result.save((error, resultAfterSave) => {
 				if (error) {
 					console.log("There was an error saving to db");
 				} else {
 					console.log("Data is suceessfully saved:", result);
 					// if save data to database, then
-					// send data to client
-					res.status(201).json(result);
+					// get the result from the sever and send it to client
+					// ?? is the
+					res.status(201).json(resultAfterSave);
 				}
 			});
 		}
@@ -108,15 +134,18 @@ app.put("/todos/:todoid", (req, res) => {
 });
 
 // DELETE
+// when recieve delete request from client
 app.delete("/todos/:todoid", (req, res) => {
-	let requestedToDoId = req.params.todoid;
-	// send delete request to database
-	TodoModel.findByIdAndDelete(requestedToDoId, (error, result) => {
+	let id = req.params.todoid;
+	// send delete request to database with id
+	TodoModel.findByIdAndDelete(id, (error, result) => {
 		if (error) {
 			console.log("Error finding documents from database: ", error);
 			// receive data from database
 		} else {
 			// send result to client
+			// ??? could we just send the key instead of sending the whole information about the user ???
+			console.log(result);
 			res.status(201).json(result);
 		}
 	});
