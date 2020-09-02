@@ -47,6 +47,8 @@ $(document).ready(() => {
 	})
 		// receive data from server
 		.done((toDoArray) => {
+			// console.log(toDoArray);
+			console.table(toDoArray, ["_id", "isComplted","description"]);
 			// remove all the fake todo items
 			$("li").remove();
 			toDoArray.forEach((todo) => {

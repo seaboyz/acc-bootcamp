@@ -99,7 +99,10 @@ app.get("/todos", (req, res) => {
 			// receive data from database
 		} else {
 			// send data to client ajax
+			console.log(results);
+			console.table(results);
 			res.json(results);
+			
 		}
 	});
 });
