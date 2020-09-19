@@ -7,10 +7,13 @@ const app = express();
 
 app.use(logger("dev"));
 
+app.use(express.static("../client"))
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors());
+
 
 // geting started with pg
 const { Client } = require("pg");
@@ -29,8 +32,10 @@ client
 	)
 	.catch(err => console.log(`Error connecting: ${err.stack}`));
 
+// Use home route to load the index.html
 app.get("/", (req, res) => {
-	res.send(`This is the Todos API running on PORT ${PORT}.`);
+	// res.send(`This is the Todos API running on PORT ${PORT}.`);
+	res.render("index.html");
 });
 
 // CRUD
