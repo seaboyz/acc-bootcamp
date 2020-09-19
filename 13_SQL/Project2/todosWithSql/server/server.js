@@ -48,7 +48,7 @@ app.post("/todos", (req, res) => {
 			INSERT INTO todos.todos 
 				(description, iscomplete, user_id)
 			VALUES
-				('${description}', false, 8)
+				(${description}, false, 8)
 			RETURNING id as _id, *;
 		`;
 	client
