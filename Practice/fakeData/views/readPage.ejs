@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Random Data App</h1>
+		<ul>
+			<li><a href="createPage">Create Data</a></li>
+			<li><a href="readPage">Read Data</a></li>
+        </ul>
+        <table border="1">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone:</th>
+            </tr>
+            <% data.forEach(element => { %> 
+                <% let {fName,lName,phone} = element %>
+                <tr>
+                    <td><%= fName %></td>
+                    <td><%= lName %></td>
+                    <td><%= phone %></td>
+                </tr>
+                <% }) %>
+        </table>
+	</body>
+</html>
