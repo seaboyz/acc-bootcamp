@@ -1,1 +1,5 @@
-<h1>The weather in San Fran </h1>
+<h1>The weather in <%= location %>  </h1>
+<h2>The forecast for today is:  <%= data.consolidated_weather[0].weather_state_name %></h2>
+<h2>The low temp today is: <%= data.consolidated_weather[0].min_temp %></h2>
+<h2>The high temp today is: <%= data.consolidated_weather[0].max_temp %></h2>
+<h2>The humidity today is: <%= data.consolidated_weather[0].humidity %></h2>
