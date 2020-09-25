@@ -4,7 +4,11 @@ const fetch = require("node-fetch");
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
+
 app.use(express.static("public"));
+
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
@@ -30,5 +34,4 @@ app.get("/getPrice", (req, res) => {
         });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
+
