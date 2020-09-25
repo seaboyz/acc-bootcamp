@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 	res.render("index.ejs");
 });
 
+// use get method
 app.get("/getPrice", (req, res) => {
 	// fetch from coindesk
 	fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
