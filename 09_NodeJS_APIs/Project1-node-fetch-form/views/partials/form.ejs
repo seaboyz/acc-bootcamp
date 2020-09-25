@@ -1,11 +1,11 @@
 <h1>BitCoin Price App</h1>
 
-<form action="/getPrice" method="GET">
-    <input type="radio" id="usd" name="currency" value="usd" checked="checked">
-    <label for="usd">USD</label>
-    <input type="radio" id="gbp" name="currency" value="gbp"/>
-    <label for="">GBP</label>
-    <input type="radio" id="eur" name="currency" value="eur"/>
-    <label for="">EUR</label>
-    <button id="get-price" type="submit">Get Price</button>
+<form action="/getPrice" method="POST">
+	<input type="radio" id="usd" name="currency" value="usd" checked="checked" />
+	<label for="usd">USD</label>
+	<input type="radio" id="gbp" name="currency" value="gbp" />
+	<label for="">GBP</label>
+	<input type="radio" id="eur" name="currency" value="eur" />
+	<label for="">EUR</label>
+	<button id="get-price" type="submit">Get Price</button>
 </form>
