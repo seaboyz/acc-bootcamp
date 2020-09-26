@@ -1,0 +1,27 @@
+<% include partials/header.ejs%>
+
+  <!-- Results Page -->
+	<div class="container-flow justify-content-center mx-3">
+    <div class="row" >
+        <div class="container col-sm-6 mb-5">
+            <div class="card m-1">
+                <div class="card-body">
+                    <h2 class="card-title">Name:</h2>
+                    <h5><%= data.name %></h4>
+                    <h2 class="card-title">Height:</h2>
+                    <h5><%= data.height %>cm</h4>
+                    <h2 class="card-title">Hair Color:</h2>
+                    <h5><%= data.hair_color %></h4>
+                </div>
+            </div>
+        </div>
+    </div>    
+    </div>
+
+    <nav class="nav nav-pills flex-column flex-sm-row fixed-bottom">
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#">Results</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Feedback</a>
+    </nav>
+
+<% include partials/footer.ejs%>

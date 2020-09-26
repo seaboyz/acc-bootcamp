@@ -1,0 +1,24 @@
+<% include partials/header.ejs%>
+
+	<!-- Home Page -->
+	<div class="jumbotron">
+		<h1 class="display-4">Star Wars Characters</h1>
+		<form action="/" method="GET">
+			<input type="number" class="form-control" 
+				   min="1" 
+				   max="10" 
+				   placeholder="Enter your number (between 1 and 10)" 
+				   name="userNumber" autofocus>
+			<input type="submit" class="btn btn-primary mt-3">
+		</form>
+
+	</div>
+
+	<!-- footer nav -->
+	<nav class="nav nav-pills flex-column flex-sm-row fixed-bottom">
+		<a class="flex-sm-fill text-sm-center nav-link active" href="#">Home</a>
+		<a class="flex-sm-fill text-sm-center nav-link" href="#">Results</a>
+		<a class="flex-sm-fill text-sm-center nav-link" href="#">Feedback</a>
+	</nav>
+
+<% include partials/footer.ejs%>
