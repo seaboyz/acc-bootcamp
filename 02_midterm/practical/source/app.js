@@ -1,8 +1,10 @@
 // require needed modules
-var express = require("express");
-var fetch = require("node-fetch");
+const express = require("express");
+const fetch = require("node-fetch");
 
-var app = express();
+const PORT = process.env.PORT || 3000;
+
+const app = express();
 
 // render home page
 app.get("/", function (req, res) {
@@ -38,6 +40,6 @@ app.get("/results", function (req, res) {
 		});
 });
 
-app.listen(3000, function () {
-	console.log("Star Wars backend running on port 3000");
+app.listen(PORT, function () {
+	console.log(`Star Wars backend running on port ${PORT}.`);
 });
