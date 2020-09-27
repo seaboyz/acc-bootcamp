@@ -5,3 +5,5 @@
 // then it sees the same function declaration test, it overwrites the the previous one.
 // then the compilation finished.
 // at the execution phase, there is only one test funtion, which value equals the the second test function.
+
+// Good - 3pts

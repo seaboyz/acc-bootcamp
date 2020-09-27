@@ -1,3 +1,13 @@
+// FEEDBACK - Definitely could have used more comments such as 
+// what is happening in each of the .then() and why.
+// Links do not work on your results.ejs -once a user makes a choice
+// they are stuck on results page. How do they get back to make another selection?
+// lastly, you are handling the error BUT what happens when there is an error?
+// You are rendering the error page BUT this actually fails becuase it is 
+// expecting a value called message which you are not using so your app will break.
+
+// SCORE - 28pts
+
 // require needed modules
 const express = require("express");
 const fetch = require("node-fetch");

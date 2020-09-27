@@ -6,3 +6,4 @@
 // "star.getName" is the method of the "star" object, when it is executed, "this" points to the object the methods live in, which is the star object. "this.knowAs" equals "Julia Roberts", so star.getName() returns "Julia Robers"
 
 
+// Perfect!! - 3pts

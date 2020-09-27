@@ -10,3 +10,5 @@ LEFT JOIN departments d
 ON (e.department_id = d.department_id) 
 LEFT JOIN employees dm 
 ON (d.manager_id = dm.employee_id);
+
+// Good job!!! - 3pts
