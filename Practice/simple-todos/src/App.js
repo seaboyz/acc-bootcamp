@@ -10,8 +10,8 @@ class App extends Component {
       todos: [],
       newTodo: '',
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
@@ -32,14 +32,14 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Simple Todo App</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <input
             className='todo-input'
             autoComplete='off'
             type='text'
             name='newTodo'
             placeholder='What needs to be done?'
-            onChange={this.handleChange}
+            onChange={this.handleChange.bind(this)}
             value={this.state.newTodo}
           />
           <button type='submit' className='save-button'>
