@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Simple Todo App</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <input
             className='todo-input'
             autoComplete='off'
