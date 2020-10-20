@@ -10,8 +10,8 @@ class App extends Component {
       todos: [],
       newTodo: '',
     }
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
@@ -39,7 +39,7 @@ class App extends Component {
             type='text'
             name='newTodo'
             placeholder='What needs to be done?'
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange}
             value={this.state.newTodo}
           />
           <button type='submit' className='save-button'>
