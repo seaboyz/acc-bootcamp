@@ -35,15 +35,15 @@ class App extends Component {
 
   handleComplete(id) {
     // use setState to change the state
-    // pass a callback function to copy the state and change it and 
+    // pass a callback function to copy the state and change it and
     // return it
-    this.setState(copyOfState => {
+    this.setState(function (state) {
       let indexOfTodo = this.state.todos.findIndex(todo => {
         return todo.id === id
       })
       let foundTodo = this.state.todos[indexOfTodo]
       foundTodo.isComplete = !foundTodo.isComplete
-      return copyOfState
+      return state
     })
   }
   render() {
