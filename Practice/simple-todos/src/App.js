@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
 
-const TodoItem = ({ text }) => <li>{text}</li>
+import TodoHeader from './components/TodoHeader'
+import TodoInput from './components/TodoInput'
+import Todos from './components/Todos'
 
 class App extends Component {
   constructor(props) {
@@ -10,8 +12,8 @@ class App extends Component {
       todos: [],
       newTodo: '',
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
@@ -20,35 +22,40 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const todos = [...this.state.todos, this.state.newTodo]
+    const todos = [
+      ...this.state.todos,
+      {
+        id: Date.now(),
+        text: this.state.newTodo,
+        isComplete: false,
+      },
+    ]
     this.setState({ todos, newTodo: '' })
   }
 
+  handleComplete(id) {
+    // use setState to change the state
+    // pass a callback function to copy the state and change it and 
+    // return it
+    this.setState(copyOfState => {
+      let indexOfTodo = this.state.todos.findIndex(todo => {
+        return todo.id === id
+      })
+      let foundTodo = this.state.todos[indexOfTodo]
+      foundTodo.isComplete = !foundTodo.isComplete
+      return copyOfState
+    })
+  }
   render() {
-    const todoslist = this.state.todos.map((todo, index) => (
-      <TodoItem key={index} text={todo} />
-    ))
-
     return (
       <div className='App'>
-        <h1>Simple Todo App</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className='todo-input'
-            autoComplete='off'
-            type='text'
-            name='newTodo'
-            placeholder='What needs to be done?'
-            onChange={this.handleChange}
-            value={this.state.newTodo}
-          />
-          <button type='submit' className='save-button'>
-            SAVE
-          </button>
-        </form>
-        <div className='todo-content'>
-          <ol>{todoslist}</ol>
-        </div>
+        <TodoHeader />
+        <TodoInput
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          newTodo={this.state.newTodo}
+        />
+        <Todos todos={this.state.todos} />
       </div>
     )
   }
