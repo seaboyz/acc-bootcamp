@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoInput = props => {
+function TodoInput(props) {
   return (
     <div>
       <form onSubmit={props.handleSubmit}>

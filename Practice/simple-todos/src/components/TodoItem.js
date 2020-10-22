@@ -1,5 +1,7 @@
 import React from 'react'
 
-const TodoItem = ({ text }) => <li>{text}</li>
+function TodoItem({ text }) {
+  return <li>{text}</li>
+}
 
 export default TodoItem

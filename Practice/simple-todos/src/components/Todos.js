@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const Todos = props => {
+function Todos(props) {
   return (
     <div className='todo-content'>
       {props.todos.map(todo => (
