@@ -14,6 +14,7 @@ class App extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleComplete = this.handleComplete.bind(this)
   }
 
   handleChange(event) {
@@ -33,19 +34,33 @@ class App extends Component {
     this.setState({ todos, newTodo: '' })
   }
 
-  handleComplete(id) {
+  // handleComplete(event) {
+  //   // use setState to change the state
+  //   // pass a callback function to copy the state and change it and
+  //   // return it
+  //   let id = event.target.id
+  //   this.setState(function (cloneOfState) {
+  //     let indexOfTodo = cloneOfState.todos.findIndex(
+  //       todo => todo.id === parseInt(id)
+  //     )
+  //     let foundTodo = cloneOfState.todos[indexOfTodo]
+  //     foundTodo.isComplete = !foundTodo.isComplete
+  //     return foundTodo
+  //   })
+  // }
+  handleComplete(event) {
     // use setState to change the state
-    // pass a callback function to copy the state and change it and
-    // return it
-    this.setState(function (state) {
-      let indexOfTodo = this.state.todos.findIndex(todo => {
-        return todo.id === id
-      })
-      let foundTodo = this.state.todos[indexOfTodo]
-      foundTodo.isComplete = !foundTodo.isComplete
-      return state
-    })
+    // pass updated object to update the state
+    let id = event.target.id
+    let indexOfTodo = this.state.todos.findIndex(
+      todo => todo.id === parseInt(id)
+    )
+    let foundTodo = this.state.todos[indexOfTodo]
+    foundTodo.isComplete = !foundTodo.isComplete
+    console.log(foundTodo)
+    this.setState(foundTodo)
   }
+
   render() {
     return (
       <div className='App'>
@@ -55,7 +70,7 @@ class App extends Component {
           handleChange={this.handleChange}
           newTodo={this.state.newTodo}
         />
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} handleComplete={this.handleComplete} />
       </div>
     )
   }

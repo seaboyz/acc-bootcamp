@@ -10,6 +10,7 @@ function Todos(props) {
           id={todo.id}
           text={todo.text}
           isComplete={todo.isComplete}
+          handleComplete={props.handleComplete}
         />
       ))}
     </div>
