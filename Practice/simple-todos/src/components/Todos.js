@@ -11,6 +11,7 @@ function Todos(props) {
           text={todo.text}
           isComplete={todo.isComplete}
           handleComplete={props.handleComplete}
+          handleDelete={props.handleDelete}
         />
       ))}
     </div>

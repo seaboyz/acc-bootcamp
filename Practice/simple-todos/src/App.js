@@ -15,6 +15,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleComplete = this.handleComplete.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   handleChange(event) {
@@ -169,6 +170,33 @@ class App extends Component {
     this.setState(cloneOfState, () => console.log("current state",this.state))
   } */
 
+  handleDelete = event => {
+    event.stopPropagation()
+    let id = event.target.id
+    this.setState(
+      state => {
+        // filter through current todos and return everything that is not equal
+        // to id
+        let newTodos = state.todos.filter(todo => {
+          return todo.id != id
+        })
+        console.log(state)
+        console.log(newTodos)
+        // overwrites the todos property
+        // equivelent let newState = {}
+        // newState.todos = {id:123, text:"xxx", isComplete:false}
+        // newState.todos = newTodos
+        // overWrite the first newState.todos
+        let newState = { ...state, todos: newTodos }
+        console.log(this.state)
+        return newState
+      },
+      () => {
+        console.log(this.state)
+      }
+    )
+  }
+
   render() {
     return (
       <div className='App'>
@@ -178,7 +206,11 @@ class App extends Component {
           handleChange={this.handleChange}
           newTodo={this.state.newTodo}
         />
-        <Todos todos={this.state.todos} handleComplete={this.handleComplete} />
+        <Todos
+          todos={this.state.todos}
+          handleComplete={this.handleComplete}
+          handleDelete={this.handleDelete}
+        />
       </div>
     )
   }

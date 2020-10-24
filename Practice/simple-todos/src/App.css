@@ -40,4 +40,25 @@
 .completed {
   color: red;
   text-decoration: line-through;
+  text-align: left;
+}
+
+span {
+  background: red;
+  color: white;
+  height: 40px;
+  margin: 0 0 0 20px;
+  opacity: 0;
+  padding: 3px 15px;
+  float: right;
+  box-sizing: border-box;
+  transition: 0.3s linear;
+  /*added for personal use*/
+  font-weight: bold;
+  text-shadow: 2px 2px black;
+  border: 1px solid darkred;
+}
+
+li:hover span {
+  opacity: 1;
 }
