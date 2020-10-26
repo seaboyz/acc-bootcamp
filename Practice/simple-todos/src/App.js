@@ -14,13 +14,20 @@ class App extends Component {
     }
   }
 
-
-  /* event handlers
+  /*  event handlers
    * use arrow funtion expression to pre-bind this to class App
-  */
+   * arrow function expression exists as a property of the App class(object). handleChange:event => {..}
+   * so when this.handleChange -> event => {}
+   * this is pre-bind to the outer scope which is App it self
+   */
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
+
+  /* handleChange(event){..} exists in the App.__proto__.handleChange: handleChange(event){..}*/
+  // handleChange(event) {
+  //   this.setState({ [event.target.name]: event.target.value })
+  // }
 
   handleSubmit = event => {
     event.preventDefault()
@@ -185,6 +192,7 @@ class App extends Component {
         <TodoHeader />
         <TodoInput
           handleSubmit={this.handleSubmit}
+          // this.handleChange is just a reference to handleSubmit property
           handleChange={this.handleChange}
           newTodo={this.state.newTodo}
         />
