@@ -1,0 +1,81 @@
+#container {
+    width: 300px;
+    margin: 100px auto;
+    border: 2px solid gray;
+}
+   
+.completed {
+    color: red;
+    text-decoration: line-through;
+}
+   
+h1 {
+    text-shadow: 2px 2px black;
+    background: #2980b9;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+   
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    line-height: 40px;
+    background: white;
+    padding: 10px;
+    }
+
+li:nth-child(2n) {
+    background: #dddddd;
+}
+
+input {
+    background: #f7f7f7;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    color: #2980b9;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin: 0; /* added in order to get rid of space*/
+}
+
+
+input:focus {
+    border: 3px solid darkgreen;
+    background: white;
+    outline: none;
+}
+
+span {
+    background: red;
+    color: white;
+    height: 40px;
+    margin: 0 0 0 20px;
+    opacity: 0;
+    padding: 3px 15px;
+    float: right;
+    box-sizing: border-box;
+    transition: 0.3s linear;
+    /*added for personal use*/
+    font-weight: bold; 
+    text-shadow: 2px 2px black;
+    border: 1px solid darkred;
+}
+
+li:hover span {
+    opacity: 1;
+}
+
+
+

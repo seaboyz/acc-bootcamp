@@ -14,7 +14,7 @@ class App extends Component {
     }
   }
 
-  /*  event handlers
+  /*  event handlers(event listners)
    * use arrow funtion expression to pre-bind this to class App
    * arrow function expression exists as a property of the App class(object). handleChange:event => {..}
    * so when this.handleChange -> event => {}
