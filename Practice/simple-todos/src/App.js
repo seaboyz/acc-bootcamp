@@ -6,23 +6,23 @@ import TodoInput from './components/TodoInput'
 import Todos from './components/Todos'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       todos: [],
       newTodo: '',
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleComplete = this.handleComplete.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
   }
 
-  handleChange(event) {
+
+  /* event handlers
+   * use arrow funtion expression to pre-bind this to class App
+  */
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault()
     const todos = [
       ...this.state.todos,
@@ -36,7 +36,40 @@ class App extends Component {
   }
 
   /* ****************************************** */
-  // no copy
+  // using updater funtion
+  handleComplete = event => {
+    let id = event.target.id
+    this.setState(function updater(state) {
+      // using deep copy to clone the current state
+      let cloneOfState = JSON.parse(JSON.stringify(state))
+      let foundTodo = cloneOfState.todos.find(todo => todo.id === parseInt(id))
+      foundTodo.isComplete = !foundTodo.isComplete
+      return cloneOfState
+    })
+  }
+
+  handleDelete = event => {
+    event.stopPropagation()
+    let id = event.target.id
+    this.setState(function updater(state) {
+      let newTodos = state.todos.filter(todo => {
+        return todo.id != id
+      })
+      console.log(state)
+      console.log(newTodos)
+      // overwrites the todos property
+      // equivelent let newState = {}
+      // newState.todos = {id:123, text:"xxx", isComplete:false}
+      // newState.todos = newTodos
+      // overWrite the first newState.todos
+      let newState = { ...state, todos: newTodos }
+      console.log(this.state)
+      return newState
+    })
+  }
+
+  /* ****************************************** */
+  /* // no copy
   // using updater funtion
   handleComplete(event) {
     let id = event.target.id
@@ -60,7 +93,7 @@ class App extends Component {
         console.log('this.state', this.state)
       }
     )
-  }
+  } */
 
   /* ****************************************** */
   /*   // shallow copy changing the original state(change todo array )
@@ -78,30 +111,6 @@ class App extends Component {
         console.log('state', state)
         foundTodo.isComplete = !foundTodo.isComplete
         console.log('state', state)
-        console.log('cloneOfState', cloneOfState)
-        return cloneOfState
-      },
-      () => {
-        console.log('current state', this.state)
-      }
-    )
-  } */
-
-  /* ****************************************** */
-  /*  // deep copy changing the original state(change todo array )
-  // using updater funtion
-  handleComplete(event) {
-    let id = event.target.id
-    this.setState(
-      function (state) {
-        // let cloneOfState = { ...this.state }
-        let cloneOfState = JSON.parse(JSON.stringify(this.state))
-        let indexOfTodo = cloneOfState.todos.findIndex(
-          todo => todo.id === parseInt(id)
-        )
-        let foundTodo = cloneOfState.todos[indexOfTodo]
-        foundTodo.isComplete = !foundTodo.isComplete
-        console.log('previous state', state)
         console.log('cloneOfState', cloneOfState)
         return cloneOfState
       },
@@ -169,33 +178,6 @@ class App extends Component {
     console.log('cloneOfState', cloneOfState)
     this.setState(cloneOfState, () => console.log("current state",this.state))
   } */
-
-  handleDelete = event => {
-    event.stopPropagation()
-    let id = event.target.id
-    this.setState(
-      state => {
-        // filter through current todos and return everything that is not equal
-        // to id
-        let newTodos = state.todos.filter(todo => {
-          return todo.id != id
-        })
-        console.log(state)
-        console.log(newTodos)
-        // overwrites the todos property
-        // equivelent let newState = {}
-        // newState.todos = {id:123, text:"xxx", isComplete:false}
-        // newState.todos = newTodos
-        // overWrite the first newState.todos
-        let newState = { ...state, todos: newTodos }
-        console.log(this.state)
-        return newState
-      },
-      () => {
-        console.log(this.state)
-      }
-    )
-  }
 
   render() {
     return (
