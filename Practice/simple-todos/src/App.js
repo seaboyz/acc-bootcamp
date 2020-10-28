@@ -12,6 +12,10 @@ class App extends Component {
       todos: [],
       newTodo: '',
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleComplete = this.handleComplete.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   /*  event handlers(event listners)
@@ -20,16 +24,16 @@ class App extends Component {
    * so when this.handleChange -> event => {}
    * this is pre-bind to the outer scope which is App it self
    */
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
-  }
-
-  /* handleChange(event){..} exists in the App.__proto__.handleChange: handleChange(event){..}*/
-  // handleChange(event) {
+  // handleChange = event => {
   //   this.setState({ [event.target.name]: event.target.value })
   // }
 
-  handleSubmit = event => {
+  /* handleChange(event){..} exists in the App.__proto__.handleChange: handleChange(event){..}*/
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleSubmit(event) {
     event.preventDefault()
     const todos = [
       ...this.state.todos,
@@ -39,12 +43,13 @@ class App extends Component {
         isComplete: false,
       },
     ]
-    this.setState({ todos, newTodo: '' })
+    const newTodo = ''
+    this.setState({ todos, newTodo })
   }
 
   /* ****************************************** */
   // using updater funtion
-  handleComplete = event => {
+  handleComplete(event) {
     let id = event.target.id
     this.setState(function updater(state) {
       // using deep copy to clone the current state
@@ -55,7 +60,7 @@ class App extends Component {
     })
   }
 
-  handleDelete = event => {
+  handleDelete(event) {
     event.stopPropagation()
     let id = event.target.id
     this.setState(function updater(state) {
