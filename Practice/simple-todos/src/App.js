@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 
-import TodoHeader from './components/TodoHeader'
-import TodoInput from './components/TodoInput'
-import Todos from './components/Todos'
-
+const TodoItem = ({ text }) => <li>{text}</li>
+// class component
 class App extends Component {
   constructor() {
     super()
