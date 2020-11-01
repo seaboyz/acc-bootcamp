@@ -4,14 +4,14 @@ import colors from './colors'
 
 function App() {
   var [backgroundColor, borderColor] = colors
-  return (
-    <>
-      <Box backgroundColor={backgroundColor} borderColor={borderColor} />
-      <Box backgroundColor={backgroundColor} borderColor={borderColor} />
-      <Box backgroundColor={backgroundColor} borderColor={borderColor} />
-      <Box backgroundColor={backgroundColor} borderColor={borderColor} />
-    </>
-  )
+  var borders = ['dotted', 'dashed', 'solid', 'groove']
+  return borders.map(border => (
+    <Box
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      borderStyle={border}
+    />
+  ))
 }
 
 export default App
