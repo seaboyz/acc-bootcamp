@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
 
+import TodoHeader from './components/TodoHeader'
+import TodoInput from './components/TodoInput'
+import Todos from './components/Todos'
+
 const TodoItem = ({ text }) => <li>{text}</li>
 // class component
 class App extends Component {
@@ -47,8 +51,10 @@ class App extends Component {
 
   /* ****************************************** */
   // using updater funtion
-  handleComplete(event) {
-    let id = event.target.id
+  handleComplete(e, id) {
+    console.log(e)
+    console.log(id)
+    // let id = event.target.id
     this.setState(function updater(state) {
       // using deep copy to clone the current state
       let cloneOfState = JSON.parse(JSON.stringify(state))
@@ -58,12 +64,11 @@ class App extends Component {
     })
   }
 
-  handleDelete(event) {
+  handleDelete(event, id) {
     event.stopPropagation()
-    let id = event.target.id
     this.setState(function updater(state) {
       let newTodos = state.todos.filter(todo => {
-        return todo.id != id
+        return todo.id !== id
       })
       console.log(state)
       console.log(newTodos)
