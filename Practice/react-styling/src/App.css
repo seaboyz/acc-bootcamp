@@ -1,0 +1,20 @@
+.card {
+  border: 5px solid;
+}
+.card--green {
+  border-color: green;
+  color: green;
+}
+.card--purple {
+  border-color: purple;
+  color: purple;
+}
+.card__title {
+  font-style: italic;
+}
+.card__title--lg {
+  font-size: large;
+}
+.card__title--sm {
+  font-size: small;
+}
