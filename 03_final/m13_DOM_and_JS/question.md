@@ -10,3 +10,5 @@
 2. Use it because it shows your mastery
 3. You need it because querySelectorAll provides a NodeList, which is missing a .map method
 4. none of the above
+
+### Answer:skip

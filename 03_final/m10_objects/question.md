@@ -4,3 +4,5 @@
 2. for(s in myObj) {myObj[key] = null}
 3. for(s of myObj) {delete myObj.key}
 4. delete myObj.key
+
+### Answer: 4

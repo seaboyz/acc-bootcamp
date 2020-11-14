@@ -7,7 +7,7 @@ function test(someText) {
   }
   return false
 }
-```  
+```
 
 What new ES6 method replaces the above annoying piece of code?
 
@@ -16,6 +16,4 @@ What new ES6 method replaces the above annoying piece of code?
 3. someText.includes()
 4. None of the above
 
-
-### Answer:
-
+### Answer:3

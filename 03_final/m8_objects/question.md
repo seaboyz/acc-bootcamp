@@ -9,3 +9,4 @@ Pick any incorrect statements about enumerable properties of objects
 5. Object.keys method may be used to iterate over enumerable properties.
 6. all of the above are true
 
+### Answer:1,2,3,5

@@ -8,5 +8,4 @@ Which of the following are some of the new features of HTML5 over the previous H
 4. Extensions to the JavaScript API such as geolocation and drag-and-drop.
 5. All of the above.
 
-### Answer:
-
+### Answer: 5

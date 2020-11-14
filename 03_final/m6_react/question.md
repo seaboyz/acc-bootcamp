@@ -5,5 +5,4 @@
 1. lifecycle functions
 1. render function
 
-### Answer:
-
+### Answer:2

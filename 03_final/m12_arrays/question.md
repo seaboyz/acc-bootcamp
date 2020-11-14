@@ -16,3 +16,5 @@ function test(myArr) {
 1. find
 2. findIndex
 3. search
+
+### Answer:1
