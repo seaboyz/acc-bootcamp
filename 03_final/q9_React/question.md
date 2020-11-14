@@ -1,0 +1,1 @@
+When does React's Virtual DOM update the real DOM?
