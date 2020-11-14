@@ -2,9 +2,8 @@ import React from 'react'
 import shortid from 'shortid'
 import { CardColumns } from 'react-bootstrap'
 import BeerCard from './BeerCard'
-import beers from '../beers.js'
 
-function BeerList() {
+function BeerList({ beers }) {
   return (
     <CardColumns>
       {beers.map(beer => (

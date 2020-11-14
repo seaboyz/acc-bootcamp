@@ -1,11 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function BeerCard(props) {
   return (
     <Card className='mx-auto'>
-      <FontAwesomeIcon icon={['fas', 'star']} />
       <Card.Img
         className='mt-4'
         variant='top'
