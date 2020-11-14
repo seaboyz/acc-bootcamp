@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+
 import Child from './Child'
 
-const Parent = () => {
-  const [name, setName] = useState('')
-
-  const handleChange = event => {
-    setName({ [event.target.name]: event.target.value })
+class Parent extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+    }
+    this.handleChange = this.handleChange.bind(this)
   }
-
-  return (
-    <div>
-      <h1>Hello {name}</h1>
-      <Child handleChange={handleChange} />
-    </div>
-  )
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value })
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.state.name}</h1>
+        <Child handleChange={this.handleChange} name={this.state.name} />
+      </div>
+    )
+  }
 }
 
 export default Parent
