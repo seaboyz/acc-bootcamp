@@ -1,12 +1,16 @@
 import React from 'react'
 
-
-const Child = () => {
-    return (
-        <>
-            <input type="text" placeholder="Please Enter Your Name"/>
-        </>
-    )
+const Child = props => {
+  return (
+    <div>
+      <input
+        type='text'
+        placeholder='Please Enter Your Name'
+        name='name'
+        onChange={props.handleChange}
+      />
+    </div>
+  )
 }
 
 export default Child

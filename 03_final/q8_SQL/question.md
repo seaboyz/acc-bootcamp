@@ -1,4 +1,4 @@
- Write a "single" SQL Query that returns data from the `TEAMS` and `PLAYERS` tables such that
+Write a "single" SQL Query that returns data from the `TEAMS` and `PLAYERS` tables such that
 
 1. All teams are returned, even if there are no players included in that team.
 
@@ -6,7 +6,7 @@
 
 3. List player's `FULLNAME` (First and Last Name separated by a space).
 
-4. If the player `weight` is greater than 200 lbs, return the text `"Heavy"`.  (Hint: you may use CASE).  Else, return the text `“Medium”`.
+4. If the player `weight` is greater than 200 lbs, return the text `"Heavy"`. (Hint: you may use CASE). Else, return the text `“Medium”`.
 
 5. Order by player's `weight` in descending order.
 
@@ -38,15 +38,31 @@ The output may look something like this. Some intermediate rows have been remove
        2 | Giants | San Francisco | CA    | Jean Machi        |    255 | Heavy
 ```
 
-
 The connection details to our class SQL database are as follows:
 
 {
-  "label": "acc-postgres-aws",
-  "host": "pgdb.accsoftwarebootcamp.com",
-  "user": "acc",
-  "port": 5432,
-  "certPath": "",
-  "database": "accsoftwarebootcamp",
-  "password": "accrocks"
+"label": "acc-postgres-aws",
+"host": "pgdb.accsoftwarebootcamp.com",
+"user": "acc",
+"port": 5432,
+"certPath": "",
+"database": "accsoftwarebootcamp",
+"password": "accrocks"
 }
+
+### Answer:
+
+SELECT team_id,
+name,
+city,
+state,
+CONCAT(fname,' ',lname) AS fullname,
+weight,
+CASE
+WHEN weight > 200 THEN 'Heavy'
+ELSE 'Medium'
+END AS Weight_Category
+FROM TEAMS AS T
+JOIN PLAYERS AS P
+ON T.id = P.team_id
+ORDER BY weight DESC
