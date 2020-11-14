@@ -8,6 +8,7 @@ const Child = props => {
         placeholder='Please Enter Your Name'
         name='name'
         onChange={props.handleChange}
+        value={props.name}
       />
     </div>
   )
