@@ -6,4 +6,4 @@
 4. process.nextTick()
 5. bind or call
 
-### Answer:skip
+### Answer:SKIPPED

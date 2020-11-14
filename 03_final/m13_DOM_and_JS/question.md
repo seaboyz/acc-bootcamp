@@ -11,4 +11,4 @@
 3. You need it because querySelectorAll provides a NodeList, which is missing a .map method
 4. none of the above
 
-### Answer:skip
+### Answer:SKIPPED
