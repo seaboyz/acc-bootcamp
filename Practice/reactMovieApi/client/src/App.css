@@ -1,0 +1,23 @@
+body {
+  padding: 0;
+  margin: 0 40px;
+  background: #3a3adc;
+}
+
+#inputField {
+  font-size: 24px;
+  display: block;
+  width: 50%;
+  padding: 8px 16px;
+  margin: 0 auto;
+}
+
+h1,
+p {
+  width: 25%;
+  margin: 0 auto;
+}
+
+#movieSearch {
+  background: lightblue;
+}
