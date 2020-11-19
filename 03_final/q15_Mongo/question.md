@@ -29,3 +29,5 @@ values of each of the keys - type, - egg, - hello // non existent
 In the above database, how would you count the number of mongo documents which contain a type "cat".
 
 ### Answer: SKIPPED
+
+## Feedback - skipped

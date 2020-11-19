@@ -34,3 +34,7 @@ function App() {
     })
   }
 }
+
+// Feedback - Incorrect
+// Look at componentDidMount function and its equivalent in the function based react components,
+// aka useEffect hook.

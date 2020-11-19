@@ -16,4 +16,8 @@ function checkSimilarity(str1, str2) {
   return diffrenceCount
 }
 
-checkSimilarity('This is a string', 'There was string')
+console.log(checkSimilarity('This is a string', 'There was string'))
+
+// I added a the console.log()
+// Good!!!
+// Feedback - 3/3 points

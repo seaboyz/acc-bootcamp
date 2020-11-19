@@ -6,3 +6,5 @@
 4. delete myObj.key
 
 ### Answer: 4
+
+## Feedback - Correct. You may also do 1. 

@@ -27,3 +27,5 @@ The data-\* attribute is used to store custom data private to the page or applic
 The data-\* attribute gives us the ability to embed custom data attributes on all HTML elements.
 
 The stored (custom) data can then be used in the page's JavaScript to create a more engaging user experience (without any Ajax calls or server-side database queries).
+
+## Feedback - 2/3 - did not answer about cookies, etc.....

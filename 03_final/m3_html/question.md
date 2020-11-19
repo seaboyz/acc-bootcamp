@@ -6,3 +6,6 @@
 4. It's ok to nest a `div` in a `span` element.
 
 ### Answer:1,2,
+
+## Feedback - partial 1/2 points
+correct answeres 1 and 3
