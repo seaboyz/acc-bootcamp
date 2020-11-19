@@ -1,58 +1,35 @@
-import React, { Component } from "react";
-import "./App.css";
-import movie_key from './config'
-console.log(movie_key.CONFIG.TMDB_KEY)
-
+import React, { Component } from 'react'
+import './App.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props)
+        this.state = { movies: [] }
+    }
 
-    const movies = [
-      {
-        id: 0,
-        poster_src:
-          "https://image.tmdb.org/t/p/w185/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-        title: "Avengers: Infinity War",
-        overview: "The Avengers fight Thanos.",
-      },
-      {
-        id: 1,
-        poster_src:
-          "https://image.tmdb.org/t/p/w185/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
-        title: "The Avengers",
-        overview: "The Avengers fight Loki.",
-      },
-    ];
+    componentDidMount() {
+        let url =
+            'https://api.themoviedb.org/3/movie/now_playing?api_key=63d5f79a61420a0b42c8ff17e773e009&language=en-US&page=1'
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                this.setState({ movies: data.results })
+            })
+            .catch(err => console.log(err))
+    }
 
-    var movieRows = [];
-    movies.forEach((movie) => {
-      const movieRow = (
-        <div key={movie.id}>
-          <img alt="poster" src={movie.poster_src}></img>
-          {movie.title}
-        </div>
-      );
-      movieRows.push(movieRow);
-    });
-
-    this.state = {
-      rows: movieRows,
-    };
-  }
-
-
-  render() {
-    return (
-      <div>
-        <div id="movieSearch">
-          <h1>Movie Search</h1>
-          <input id="inputField" placeholder="Enter your movie"></input>
-        </div>
-        {this.state.rows}
-      </div>
-    );
-  }
+    render() {
+        const { movies } = this.state
+        return movies.map(movie => (
+            <div key={movie.id}>
+                <img
+                    alt='poster'
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                />
+                {movie.title}
+            </div>
+        ))
+    }
 }
 
-export default App;
+export default App
