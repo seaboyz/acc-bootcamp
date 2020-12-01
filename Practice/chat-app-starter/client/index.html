@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat!</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- load socket.io library  -->
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="nickname">
+            <div class="nickname__header">
+                <h2>Welcome!</h2>
+            </div>
+            <div class="nickname__input-container">
+                <input
+                    id="nickname"
+                    type="text"
+                    placeholder="Choose a nickname"
+                    class="nickname__input"
+                />
+                <button class="nickname__submit">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <main class="chat">
+            <div class="chat__messages">
+                <div class="chat__user-message">
+                    <div class="chat__user-nickname">Sage</div>
+                    <div class="chat__user-text">Hey, how's it going?</div>
+                </div>
+                <div class="chat__new-user-joined">
+                    <i>Jon-Mikel has joined the chat</i>
+                </div>
+            </div>
+            <div class="chat__new-message">
+                <input
+                    id="message"
+                    type="text"
+                    placeholder="New Message"
+                    class="chat__input-message"
+                />
+                <button class="chat__submit">
+                    <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>

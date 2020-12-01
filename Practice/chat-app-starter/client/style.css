@@ -1,0 +1,130 @@
+/* Default stylings */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MuseoModerno', cursive;
+}
+
+input,
+input:focus {
+    border: none;
+    outline: none;
+}
+
+/* Nickname classes handles what the user sees when picking a nickname */
+.nickname {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(121, 9, 33, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}
+
+.nickname__header {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20%;
+}
+
+.nickname__input-container {
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.nickname__input {
+    font-size: 20px;
+    width: 100%;
+}
+
+.nickname__submit {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(38, 202, 38);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nickname__submit:hover {
+    background-color: darkgreen;
+    transition: all 0.2s;
+}
+
+/* Chat classes handles what the user sees using the main application */
+.chat {
+    background-color: #36393f;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Contains all sent messages */
+.chat__messages {
+    overflow: scroll;
+}
+
+.chat__user-message {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.chat__user-nickname {
+    color: #28a745;
+    font-weight: bolder;
+}
+
+.chat__user-text {
+    color: #dcddde;
+}
+
+.chat__new-user-joined {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #dcddde;
+    width: 90%;
+    margin: 10px auto;
+}
+
+/* Contains the chat input and button */
+.chat__new-message {
+    margin: 30px auto;
+    width: 90%;
+    background-color: #40444b;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.chat__input-message,
+.chat__submit {
+    background-color: #40444b;
+    color: #dcddde;
+    font-size: 30px;
+    border: none;
+}
+
+.chat__input-message {
+    width: 90%;
+}
+
+.chat__submit:hover {
+    cursor: pointer;
+    translate: all 0.2s;
+    color: rgb(148, 152, 155);
+}
