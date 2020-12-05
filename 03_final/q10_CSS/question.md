@@ -13,3 +13,5 @@ https://jsbin.com/yohivodobe/edit?html,output
 1. span is inline element, so it can only take margins left and right
 
 2. img's inline style is more specific than id
+
+## Feedback - 3/3

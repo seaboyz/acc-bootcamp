@@ -10,3 +10,5 @@ Pick any incorrect statements about enumerable properties of objects
 6. all of the above are true
 
 ### Answer:1,2,3,5
+
+## Feedback - partial credit 1.75/2 - should be #6

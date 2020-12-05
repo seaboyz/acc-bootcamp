@@ -15,3 +15,5 @@ What are various iterator functions available in JavaScript (e.g. forEach)? What
 
 3.  var arr = [1,2,3]
     arr.forEach(e=>console.log(e))
+
+## Feedback - 2.5/3 - really wanted to see examples from #12.5
